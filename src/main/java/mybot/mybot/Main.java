@@ -10,34 +10,34 @@ import org.javacord.api.entity.message.embed.EmbedBuilder;
 
 public class Main {
     public static void main(String[] args) {
-        String token = "Nzc4MTExMjQxNzk3MTA3NzIz.X7NOkA.DHetLBmk9shFRPSNHwO4tKfj56w";
-        DiscordApi api = new DiscordApiBuilder()//ÀÎÅÙµå ¸ğµÎ È°¼ºÈ­
-        	    .setToken("Nzc4MTExMjQxNzk3MTA3NzIz.X7NOkA.DHetLBmk9shFRPSNHwO4tKfj56w")
+        String token = "ë¹„ë°€";
+        DiscordApi api = new DiscordApiBuilder()//ì¸í…ë“œ ëª¨ë‘ í™œì„±í™”
+        	    .setToken("ë¹„ë°€")
         	    .setAllIntents()
         	    .login()
         	    .join();
         DiscordApi api1 = new DiscordApiBuilder().setToken(token).login().join();
-        api1.updateActivity("[¿Â¶óÀÎ / Online]");
+        api1.updateActivity("[ì˜¨ë¼ì¸ / Online]");
         api1.addMessageCreateListener(event -> {
             if(event.getMessageContent().equalsIgnoreCase("//ping")) {
                 event.getChannel().sendMessage("Pong!");
             }
-            if(event.getMessageContent().equalsIgnoreCase("//µµ¿ò¸»")) {
+            if(event.getMessageContent().equalsIgnoreCase("//ë„ì›€ë§")) {
             	EmbedBuilder help = new EmbedBuilder()
             			.setColor(Color.CYAN)
-            		    .setTitle("½ºÇÁ¸µ º¿ µµ¿ò¸» / Spring Bot Help")
-            		    .setDescription("°³¹ßÀÚ: Spring_Discord#7425\n¾ğ¾î: Java\n¸í·É¾îÀÇ Á¢¹Ì»ç´Â // ÀÔ´Ï´Ù.")
-            			.addField("- //ping", "Pong À¸·Î º¿ÀÌ ´äº¯ÇÏ´Â ¸í·É¾îÀÔ´Ï´Ù.")
-            			.addField("- //embed", "±âº»ÀûÀÎ ÀÓº£µå¸¦ ³»º¸³»´Â ¸í·É¾îÀÔ´Ï´Ù.")
-            			.addField("- //wasans, //sans, //»÷Áî", "¿Í! »÷Áî¸¦ ¸»ÇÏ´Â ¸í·É¾îÀÔ´Ï´Ù.")
-            			.addField("- ÁØºñÁß", "ÁØºñÁßÀÔ´Ï´Ù.")
-            			.addField("- ÁØºñÁß", "ÁØºñÁßÀÔ´Ï´Ù.");
+            		    .setTitle("ìŠ¤í”„ë§ ë´‡ ë„ì›€ë§ / Spring Bot Help")
+            		    .setDescription("ê°œë°œì: Spring_Discord#7425\nì–¸ì–´: Java\nëª…ë ¹ì–´ì˜ ì ‘ë¯¸ì‚¬ëŠ” // ì…ë‹ˆë‹¤.")
+            			.addField("- //ping", "Pong ìœ¼ë¡œ ë´‡ì´ ë‹µë³€í•˜ëŠ” ëª…ë ¹ì–´ì…ë‹ˆë‹¤.")
+            			.addField("- //embed", "ê¸°ë³¸ì ì¸ ì„ë² ë“œë¥¼ ë‚´ë³´ë‚´ëŠ” ëª…ë ¹ì–´ì…ë‹ˆë‹¤.")
+            			.addField("- //wasans, //sans, //ìƒŒì¦ˆ", "ì™€! ìƒŒì¦ˆë¥¼ ë§í•˜ëŠ” ëª…ë ¹ì–´ì…ë‹ˆë‹¤.")
+            			.addField("- //ê°œë°œì í˜¸ì¶œ", "ë´‡ ê°œë°œìë¥¼ ë§¨ì…˜í•˜ëŠ” ëª…ë ¹ì–´ì…ë‹ˆë‹¤.")
+            			.addField("- ì¤€ë¹„ì¤‘", "ì¤€ë¹„ì¤‘ì…ë‹ˆë‹¤.");
     			
             	event.getChannel().sendMessage(help);
             }
             if(event.getMessageContent().equalsIgnoreCase("//embed")) {
             	EmbedBuilder test = new EmbedBuilder()
-            			.setColor(Color.gray)//È¸»ö
+            			.setColor(Color.gray)//íšŒìƒ‰
             		    .setTitle("Title")
             		    .setDescription("Description")
             		    .addField("Field", "Text");
@@ -48,26 +48,28 @@ public class Main {
             }
             if(event.getMessageContent().equalsIgnoreCase("//check embed")) {
             	EmbedBuilder check = new EmbedBuilder()
-            			.setColor(Color.GREEN)//ÃÊ·Ï»ö
-            		    .setTitle("Ã¼Å© / Check")
-            		    .setDescription(":white_check_mark: Ã¼Å©ÀÓº£µå ÀÔ´Ï´Ù.");
+            			.setColor(Color.GREEN)//ì´ˆë¡ìƒ‰
+            		    .setTitle("ì²´í¬ / Check")
+            		    .setDescription(":white_check_mark: ì²´í¬ì„ë² ë“œ ì…ë‹ˆë‹¤.");
             	event.getChannel().sendMessage(check);
             }
-            if(event.getMessageContent().equalsIgnoreCase("//Å×½ºÆ®")) {
-            	event.getChannel().sendMessage("Å×½ºÆ® / Test");
+            if(event.getMessageContent().equalsIgnoreCase("//í…ŒìŠ¤íŠ¸")) {
+            	event.getChannel().sendMessage("í…ŒìŠ¤íŠ¸ / Test");
             }
             if(event.getMessageContent().equalsIgnoreCase("//wasans")) {
-            	event.getChannel().sendMessage("¿Í! »÷Áî! / Wa! Sans!");
+            	event.getChannel().sendMessage("ì™€! ìƒŒì¦ˆ! / Wa! Sans!");
             }
             if(event.getMessageContent().equalsIgnoreCase("//sans")) {
-            	event.getChannel().sendMessage("¿Í! »÷Áî! / Wa! Sans!");
+            	event.getChannel().sendMessage("ì™€! ìƒŒì¦ˆ! / Wa! Sans!");
             }
-            if(event.getMessageContent().equalsIgnoreCase("//»÷Áî")) {
-            	event.getChannel().sendMessage("¿Í! »÷Áî! / Wa! Sans!");
+            if(event.getMessageContent().equalsIgnoreCase("//ìƒŒì¦ˆ")) {
+            	event.getChannel().sendMessage("ì™€! ìƒŒì¦ˆ! / Wa! Sans!");
             }
+	    if(event.getMessageContent().wqualsIgnoreCase("//ë§¨ì…˜") {
+		event.getChannel().sendMessage("<@!691184476797009941>");
             
             	});
-        System.out.println("º¿ÀÌ ½ÃÀÛµÇ¾ú½À´Ï´Ù. / Bot Start.");
+        System.out.println("ë´‡ì´ ì‹œì‘ë˜ì—ˆìŠµë‹ˆë‹¤. / Bot Start.");
     }
 
 		
